@@ -53,6 +53,9 @@ namespace Aplikacija_balon
             this.txt_posatu = new System.Windows.Forms.TextBox();
             this.txt_brojsati = new System.Windows.Forms.TextBox();
             this.txt_ukupno = new System.Windows.Forms.TextBox();
+            this.btn_dodaj = new System.Windows.Forms.Button();
+            this.btn_izmeni = new System.Windows.Forms.Button();
+            this.btn_obrisi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,7 +121,7 @@ namespace Aplikacija_balon
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1205, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1380, 24);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -126,7 +129,7 @@ namespace Aplikacija_balon
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(473, 68);
+            this.label4.Location = new System.Drawing.Point(419, 69);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(105, 25);
             this.label4.TabIndex = 10;
@@ -136,7 +139,7 @@ namespace Aplikacija_balon
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(487, 113);
+            this.label5.Location = new System.Drawing.Point(433, 114);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(91, 25);
             this.label5.TabIndex = 11;
@@ -146,25 +149,26 @@ namespace Aplikacija_balon
             // 
             this.cmb_korisnik.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_korisnik.FormattingEnabled = true;
-            this.cmb_korisnik.Location = new System.Drawing.Point(584, 65);
+            this.cmb_korisnik.Location = new System.Drawing.Point(530, 66);
             this.cmb_korisnik.Name = "cmb_korisnik";
-            this.cmb_korisnik.Size = new System.Drawing.Size(121, 33);
+            this.cmb_korisnik.Size = new System.Drawing.Size(359, 33);
             this.cmb_korisnik.TabIndex = 12;
             // 
             // cmb_objekat
             // 
             this.cmb_objekat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_objekat.FormattingEnabled = true;
-            this.cmb_objekat.Location = new System.Drawing.Point(584, 110);
+            this.cmb_objekat.Location = new System.Drawing.Point(530, 111);
             this.cmb_objekat.Name = "cmb_objekat";
-            this.cmb_objekat.Size = new System.Drawing.Size(121, 33);
+            this.cmb_objekat.Size = new System.Drawing.Size(359, 33);
             this.cmb_objekat.TabIndex = 13;
+            this.cmb_objekat.SelectedValueChanged += new System.EventHandler(this.cmb_objekat_SelectedValueChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(772, 44);
+            this.label6.Location = new System.Drawing.Point(947, 47);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(83, 25);
             this.label6.TabIndex = 14;
@@ -174,7 +178,7 @@ namespace Aplikacija_balon
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(758, 87);
+            this.label7.Location = new System.Drawing.Point(933, 90);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(97, 25);
             this.label7.TabIndex = 15;
@@ -184,7 +188,7 @@ namespace Aplikacija_balon
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(799, 134);
+            this.label8.Location = new System.Drawing.Point(974, 137);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(55, 25);
             this.label8.TabIndex = 16;
@@ -193,7 +197,7 @@ namespace Aplikacija_balon
             // dateTimePicker1
             // 
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(861, 41);
+            this.dateTimePicker1.Location = new System.Drawing.Point(1036, 44);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(332, 30);
             this.dateTimePicker1.TabIndex = 17;
@@ -202,35 +206,39 @@ namespace Aplikacija_balon
             // 
             this.cmb_pocetak.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_pocetak.FormattingEnabled = true;
-            this.cmb_pocetak.Location = new System.Drawing.Point(860, 84);
+            this.cmb_pocetak.Location = new System.Drawing.Point(1035, 87);
             this.cmb_pocetak.Name = "cmb_pocetak";
             this.cmb_pocetak.Size = new System.Drawing.Size(70, 33);
             this.cmb_pocetak.TabIndex = 18;
+            this.cmb_pocetak.SelectedValueChanged += new System.EventHandler(this.cmb_pocetak_SelectedValueChanged);
             // 
             // cmb_kraj
             // 
             this.cmb_kraj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmb_kraj.FormattingEnabled = true;
-            this.cmb_kraj.Location = new System.Drawing.Point(860, 131);
+            this.cmb_kraj.Location = new System.Drawing.Point(1035, 134);
             this.cmb_kraj.Name = "cmb_kraj";
             this.cmb_kraj.Size = new System.Drawing.Size(70, 33);
             this.cmb_kraj.TabIndex = 19;
+            this.cmb_kraj.SelectedValueChanged += new System.EventHandler(this.cmb_kraj_SelectedValueChanged);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 303);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1181, 321);
+            this.dataGridView1.Size = new System.Drawing.Size(1356, 321);
             this.dataGridView1.TabIndex = 20;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(718, 179);
+            this.label9.Location = new System.Drawing.Point(893, 182);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(137, 25);
             this.label9.TabIndex = 21;
@@ -240,7 +248,7 @@ namespace Aplikacija_balon
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(751, 220);
+            this.label10.Location = new System.Drawing.Point(926, 223);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(104, 25);
             this.label10.TabIndex = 22;
@@ -250,7 +258,7 @@ namespace Aplikacija_balon
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(725, 258);
+            this.label11.Location = new System.Drawing.Point(900, 261);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(130, 25);
             this.label11.TabIndex = 23;
@@ -260,7 +268,7 @@ namespace Aplikacija_balon
             // 
             this.txt_posatu.Enabled = false;
             this.txt_posatu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_posatu.Location = new System.Drawing.Point(860, 176);
+            this.txt_posatu.Location = new System.Drawing.Point(1035, 179);
             this.txt_posatu.Name = "txt_posatu";
             this.txt_posatu.Size = new System.Drawing.Size(167, 30);
             this.txt_posatu.TabIndex = 24;
@@ -269,7 +277,7 @@ namespace Aplikacija_balon
             // 
             this.txt_brojsati.Enabled = false;
             this.txt_brojsati.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_brojsati.Location = new System.Drawing.Point(860, 217);
+            this.txt_brojsati.Location = new System.Drawing.Point(1035, 220);
             this.txt_brojsati.Name = "txt_brojsati";
             this.txt_brojsati.Size = new System.Drawing.Size(167, 30);
             this.txt_brojsati.TabIndex = 25;
@@ -278,16 +286,50 @@ namespace Aplikacija_balon
             // 
             this.txt_ukupno.Enabled = false;
             this.txt_ukupno.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_ukupno.Location = new System.Drawing.Point(860, 255);
+            this.txt_ukupno.Location = new System.Drawing.Point(1035, 258);
             this.txt_ukupno.Name = "txt_ukupno";
             this.txt_ukupno.Size = new System.Drawing.Size(167, 30);
             this.txt_ukupno.TabIndex = 26;
+            // 
+            // btn_dodaj
+            // 
+            this.btn_dodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dodaj.Location = new System.Drawing.Point(103, 214);
+            this.btn_dodaj.Name = "btn_dodaj";
+            this.btn_dodaj.Size = new System.Drawing.Size(198, 34);
+            this.btn_dodaj.TabIndex = 27;
+            this.btn_dodaj.Text = "Додај резервацију";
+            this.btn_dodaj.UseVisualStyleBackColor = true;
+            this.btn_dodaj.Click += new System.EventHandler(this.btn_dodaj_Click);
+            // 
+            // btn_izmeni
+            // 
+            this.btn_izmeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_izmeni.Location = new System.Drawing.Point(338, 214);
+            this.btn_izmeni.Name = "btn_izmeni";
+            this.btn_izmeni.Size = new System.Drawing.Size(215, 34);
+            this.btn_izmeni.TabIndex = 28;
+            this.btn_izmeni.Text = "Измени резервацију";
+            this.btn_izmeni.UseVisualStyleBackColor = true;
+            // 
+            // btn_obrisi
+            // 
+            this.btn_obrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_obrisi.Location = new System.Drawing.Point(583, 214);
+            this.btn_obrisi.Name = "btn_obrisi";
+            this.btn_obrisi.Size = new System.Drawing.Size(213, 34);
+            this.btn_obrisi.TabIndex = 29;
+            this.btn_obrisi.Text = "Обриши резервацију";
+            this.btn_obrisi.UseVisualStyleBackColor = true;
             // 
             // Zaposleni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1205, 636);
+            this.ClientSize = new System.Drawing.Size(1380, 636);
+            this.Controls.Add(this.btn_obrisi);
+            this.Controls.Add(this.btn_izmeni);
+            this.Controls.Add(this.btn_dodaj);
             this.Controls.Add(this.txt_ukupno);
             this.Controls.Add(this.txt_brojsati);
             this.Controls.Add(this.txt_posatu);
@@ -349,5 +391,8 @@ namespace Aplikacija_balon
         private System.Windows.Forms.TextBox txt_posatu;
         private System.Windows.Forms.TextBox txt_brojsati;
         private System.Windows.Forms.TextBox txt_ukupno;
+        private System.Windows.Forms.Button btn_dodaj;
+        private System.Windows.Forms.Button btn_izmeni;
+        private System.Windows.Forms.Button btn_obrisi;
     }
 }

@@ -78,7 +78,7 @@ namespace Aplikacija_balon
             this.dugme_login.Name = "dugme_login";
             this.dugme_login.Size = new System.Drawing.Size(94, 41);
             this.dugme_login.TabIndex = 4;
-            this.dugme_login.Text = "Uloguj se";
+            this.dugme_login.Text = "Улогуј се";
             this.dugme_login.UseVisualStyleBackColor = true;
             this.dugme_login.Click += new System.EventHandler(this.dugme_login_Click);
             // 

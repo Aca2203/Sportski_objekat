@@ -51,3 +51,13 @@ select * from Objekat
 
 insert into zaposleni values('milanmariczp@gmail.com', 'milan123', 'Milan', 'Maric', 1)
 select * from zaposleni
+
+insert into termini values('2022-05-22', 8, 3500, 1);
+insert into termini values('2022-05-22', 9, 3500, 1);
+insert into termini values('2022-05-22', 10, 3500, 1);
+insert into termini values('2022-05-22', 11, 3500, 1);
+insert into termini values('2022-05-22', 12, 3500, 1);
+insert into termini values('2022-05-22', 13, 4000, 1);
+insert into termini values('2022-05-22', 14, 4000, 1);
+insert into termini values('2022-05-22', 15, 4000, 1);
+select * from termini
