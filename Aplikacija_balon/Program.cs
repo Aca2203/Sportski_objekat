@@ -8,6 +8,8 @@ namespace Aplikacija_balon
 {
     static class Program
     {
+        static public int id = 0;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>

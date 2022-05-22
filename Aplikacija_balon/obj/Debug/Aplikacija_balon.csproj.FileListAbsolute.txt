@@ -8,3 +8,4 @@ C:\Users\Sale\Desktop\Aplikacije\Sportski_objekat\Aplikacija_balon\obj\Debug\Apl
 C:\Users\Sale\Desktop\Aplikacije\Sportski_objekat\Aplikacija_balon\obj\Debug\Aplikacija_balon.csproj.CoreCompileInputs.cache
 C:\Users\Sale\Desktop\Aplikacije\Sportski_objekat\Aplikacija_balon\obj\Debug\Aplikacija_balon.exe
 C:\Users\Sale\Desktop\Aplikacije\Sportski_objekat\Aplikacija_balon\obj\Debug\Aplikacija_balon.pdb
+C:\Users\Sale\Desktop\Aplikacije\Sportski_objekat\Aplikacija_balon\obj\Debug\Aplikacija_balon.Zaposleni.resources

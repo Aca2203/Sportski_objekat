@@ -29,8 +29,8 @@ namespace Aplikacija_balon
             {
                 try
                 {
-                    SqlConnection veza = Konekcija.Povezi();
-                    SqlCommand komanda = new SqlCommand("SELECT * FROM Osoba WHERE email = @username", veza);
+                    SqlConnection veza = Konekcija.Connect();
+                    SqlCommand komanda = new SqlCommand("SELECT * FROM Korisnik WHERE email = @username", veza);
                     komanda.Parameters.AddWithValue("@username", txt_email.Text);
                     SqlDataAdapter adapter = new SqlDataAdapter(komanda);
                     DataTable tabela = new DataTable();
@@ -39,24 +39,50 @@ namespace Aplikacija_balon
                     int brojac = tabela.Rows.Count;
                     if (brojac == 1)
                     {
-                        if (String.Compare(tabela.Rows[0]["pass"].ToString(), txt_pass.Text) == 0)
+                        if (String.Compare(tabela.Rows[0]["lozinka"].ToString(), txt_lozinka.Text) == 0)
                         {
-                            MessageBox.Show("Успешно сте се улоговали!");
-                            Program.ime_korisnika = tabela.Rows[0]["ime"].ToString();
-                            Program.prezime_korisnika = tabela.Rows[0]["prezime"].ToString();
-                            Program.uloga_korisnika = tabela.Rows[0]["uloga"].ToString();
+                            MessageBox.Show("Uspesno logovanje");
+                            Program.id = (int) tabela.Rows[0]["id"];                            
                             this.Hide();
-                            Glavna2 frm_Glavna2 = new Glavna2();
-                            frm_Glavna2.Show();
+                            
+                            Korisnik frm_korisnik = new Korisnik();
+                            frm_korisnik.Show();
                         }
                         else
                         {
-                            MessageBox.Show("Унели сте погрешну лозинку!");
+                            MessageBox.Show("Pogresna lozinka!");
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Унели сте непостојећу имејл адресу!");
+                        veza = Konekcija.Connect();
+                        komanda = new SqlCommand("SELECT * FROM Zaposleni WHERE email = @username", veza);
+                        komanda.Parameters.AddWithValue("@username", txt_email.Text);
+                        adapter = new SqlDataAdapter(komanda);
+                        tabela = new DataTable();
+                        adapter.Fill(tabela);
+
+                        brojac = tabela.Rows.Count;
+                        if (brojac == 1)
+                        {
+                            if (String.Compare(tabela.Rows[0]["lozinka"].ToString(), txt_lozinka.Text) == 0)
+                            {
+                                MessageBox.Show("Uspesno logovanje");
+                                Program.id = (int) tabela.Rows[0]["id"];
+                                this.Hide();
+
+                                Zaposleni frm_zaposleni = new Zaposleni();
+                                frm_zaposleni.Show();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Pogresna lozinka!");
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Uneli ste nepostojecu imejl adresu!");
+                        }
                     }
                 }
                 catch (Exception greska)
