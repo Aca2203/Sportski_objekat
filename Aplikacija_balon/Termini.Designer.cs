@@ -36,7 +36,7 @@ namespace Aplikacija_balon
             this.label3 = new System.Windows.Forms.Label();
             this.txt_ime = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_objekat = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,7 +63,7 @@ namespace Aplikacija_balon
             // 
             this.txt_email.Enabled = false;
             this.txt_email.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_email.Location = new System.Drawing.Point(147, 168);
+            this.txt_email.Location = new System.Drawing.Point(147, 31);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(267, 30);
             this.txt_email.TabIndex = 13;
@@ -79,6 +79,7 @@ namespace Aplikacija_balon
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1169, 321);
             this.dataGridView1.TabIndex = 21;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // txt_prezime
             // 
@@ -118,14 +119,14 @@ namespace Aplikacija_balon
             this.label2.TabIndex = 24;
             this.label2.Text = "Име:";
             // 
-            // textBox1
+            // txt_objekat
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(147, 28);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(267, 30);
-            this.textBox1.TabIndex = 23;
+            this.txt_objekat.Enabled = false;
+            this.txt_objekat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_objekat.Location = new System.Drawing.Point(147, 168);
+            this.txt_objekat.Name = "txt_objekat";
+            this.txt_objekat.Size = new System.Drawing.Size(267, 30);
+            this.txt_objekat.TabIndex = 23;
             // 
             // label1
             // 
@@ -157,7 +158,6 @@ namespace Aplikacija_balon
             // 
             // txt_vreme
             // 
-            this.txt_vreme.Enabled = false;
             this.txt_vreme.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_vreme.Location = new System.Drawing.Point(698, 73);
             this.txt_vreme.Name = "txt_vreme";
@@ -176,7 +176,6 @@ namespace Aplikacija_balon
             // 
             // txt_cena
             // 
-            this.txt_cena.Enabled = false;
             this.txt_cena.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_cena.Location = new System.Drawing.Point(698, 120);
             this.txt_cena.Name = "txt_cena";
@@ -187,11 +186,11 @@ namespace Aplikacija_balon
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(563, 123);
+            this.label11.Location = new System.Drawing.Point(629, 123);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(130, 25);
+            this.label11.Size = new System.Drawing.Size(64, 25);
             this.label11.TabIndex = 32;
-            this.label11.Text = "Укупна цена:";
+            this.label11.Text = "Цена:";
             // 
             // btn_obrisi
             // 
@@ -202,6 +201,7 @@ namespace Aplikacija_balon
             this.btn_obrisi.TabIndex = 35;
             this.btn_obrisi.Text = "Обриши термин";
             this.btn_obrisi.UseVisualStyleBackColor = true;
+            this.btn_obrisi.Click += new System.EventHandler(this.btn_obrisi_Click);
             // 
             // btn_dodaj
             // 
@@ -212,6 +212,7 @@ namespace Aplikacija_balon
             this.btn_dodaj.TabIndex = 34;
             this.btn_dodaj.Text = "Додај термин";
             this.btn_dodaj.UseVisualStyleBackColor = true;
+            this.btn_dodaj.Click += new System.EventHandler(this.btn_dodaj_Click);
             // 
             // Termini
             // 
@@ -230,7 +231,7 @@ namespace Aplikacija_balon
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txt_ime);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_objekat);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.txt_email);
@@ -253,7 +254,7 @@ namespace Aplikacija_balon
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_ime;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_objekat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;

@@ -70,6 +70,9 @@ insert into termini values('2022-05-23', 13, 4000, 1);
 insert into termini values('2022-05-23', 14, 4000, 1);
 insert into termini values('2022-05-23', 15, 4000, 1);
 select * from termini
+select * from rezervacija;
+delete from rezervacija where id = 3
+select * from zaposleni where id = 1
 
 alter procedure rezervacija_dodaj
 @korisnik_id int,
@@ -79,8 +82,23 @@ alter procedure rezervacija_dodaj
 @kraj int
 as
 begin try
-if (exists(select top 1 id from Rezervacija where (@pocetak >= pocetak and @pocetak <= kraj) or (@kraj >= pocetak and @kraj <= kraj))) return -1;
+if (exists(select top 1 id from Rezervacija where datum = @datum and ((@pocetak >= pocetak and @pocetak <= kraj) or (@kraj >= pocetak and @kraj <= kraj)))) return -1;
 insert into Rezervacija values(@korisnik_id, @objekat_id, @datum, @pocetak, @kraj);
+return 0;
+end try
+begin catch
+return @@error;
+end catch;
+
+create procedure termin_dodaj
+@datum date,
+@vreme int,
+@cena int,
+@objekat_id int
+as
+begin try
+if (exists(select top 1 id from Termini where datum = @datum and vreme = @vreme and objekat_id = @objekat_id)) return -1;
+insert into Termini values(@datum, @vreme, @cena, @objekat_id);
 return 0;
 end try
 begin catch
