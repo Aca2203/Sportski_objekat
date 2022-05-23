@@ -9,6 +9,7 @@ namespace Aplikacija_balon
     static class Program
     {
         static public int id = 1;
+        static public int objekat_id = 1;
 
         /// <summary>
         /// The main entry point for the application.

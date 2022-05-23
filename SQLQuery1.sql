@@ -60,4 +60,29 @@ insert into termini values('2022-05-22', 12, 3500, 1);
 insert into termini values('2022-05-22', 13, 4000, 1);
 insert into termini values('2022-05-22', 14, 4000, 1);
 insert into termini values('2022-05-22', 15, 4000, 1);
+
+insert into termini values('2022-05-23', 8, 3500, 1);
+insert into termini values('2022-05-23', 9, 3500, 1);
+insert into termini values('2022-05-23', 10, 3500, 1);
+insert into termini values('2022-05-23', 11, 3500, 1);
+insert into termini values('2022-05-23', 12, 3500, 1);
+insert into termini values('2022-05-23', 13, 4000, 1);
+insert into termini values('2022-05-23', 14, 4000, 1);
+insert into termini values('2022-05-23', 15, 4000, 1);
 select * from termini
+
+alter procedure rezervacija_dodaj
+@korisnik_id int,
+@objekat_id int,
+@datum date,
+@pocetak int,
+@kraj int
+as
+begin try
+if (exists(select top 1 id from Rezervacija where (@pocetak >= pocetak and @pocetak <= kraj) or (@kraj >= pocetak and @kraj <= kraj))) return -1;
+insert into Rezervacija values(@korisnik_id, @objekat_id, @datum, @pocetak, @kraj);
+return 0;
+end try
+begin catch
+return @@error;
+end catch;

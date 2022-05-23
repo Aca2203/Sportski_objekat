@@ -54,8 +54,9 @@ namespace Aplikacija_balon
             this.txt_brojsati = new System.Windows.Forms.TextBox();
             this.txt_ukupno = new System.Windows.Forms.TextBox();
             this.btn_dodaj = new System.Windows.Forms.Button();
-            this.btn_izmeni = new System.Windows.Forms.Button();
             this.btn_obrisi = new System.Windows.Forms.Button();
+            this.прегледТерминаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,9 +120,11 @@ namespace Aplikacija_balon
             // menuStrip1
             // 
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.прегледТерминаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1380, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1380, 28);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -201,6 +204,7 @@ namespace Aplikacija_balon
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(332, 30);
             this.dateTimePicker1.TabIndex = 17;
+            this.dateTimePicker1.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
             // 
             // cmb_pocetak
             // 
@@ -220,7 +224,7 @@ namespace Aplikacija_balon
             this.cmb_kraj.Name = "cmb_kraj";
             this.cmb_kraj.Size = new System.Drawing.Size(70, 33);
             this.cmb_kraj.TabIndex = 19;
-            this.cmb_kraj.SelectedValueChanged += new System.EventHandler(this.cmb_kraj_SelectedValueChanged);
+            this.cmb_kraj.TextChanged += new System.EventHandler(this.cmb_kraj_TextChanged);
             // 
             // dataGridView1
             // 
@@ -233,6 +237,7 @@ namespace Aplikacija_balon
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(1356, 321);
             this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // label9
             // 
@@ -294,7 +299,7 @@ namespace Aplikacija_balon
             // btn_dodaj
             // 
             this.btn_dodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_dodaj.Location = new System.Drawing.Point(103, 214);
+            this.btn_dodaj.Location = new System.Drawing.Point(137, 214);
             this.btn_dodaj.Name = "btn_dodaj";
             this.btn_dodaj.Size = new System.Drawing.Size(198, 34);
             this.btn_dodaj.TabIndex = 27;
@@ -302,25 +307,23 @@ namespace Aplikacija_balon
             this.btn_dodaj.UseVisualStyleBackColor = true;
             this.btn_dodaj.Click += new System.EventHandler(this.btn_dodaj_Click);
             // 
-            // btn_izmeni
-            // 
-            this.btn_izmeni.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_izmeni.Location = new System.Drawing.Point(338, 214);
-            this.btn_izmeni.Name = "btn_izmeni";
-            this.btn_izmeni.Size = new System.Drawing.Size(215, 34);
-            this.btn_izmeni.TabIndex = 28;
-            this.btn_izmeni.Text = "Измени резервацију";
-            this.btn_izmeni.UseVisualStyleBackColor = true;
-            // 
             // btn_obrisi
             // 
             this.btn_obrisi.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_obrisi.Location = new System.Drawing.Point(583, 214);
+            this.btn_obrisi.Location = new System.Drawing.Point(499, 214);
             this.btn_obrisi.Name = "btn_obrisi";
             this.btn_obrisi.Size = new System.Drawing.Size(213, 34);
             this.btn_obrisi.TabIndex = 29;
             this.btn_obrisi.Text = "Обриши резервацију";
             this.btn_obrisi.UseVisualStyleBackColor = true;
+            this.btn_obrisi.Click += new System.EventHandler(this.btn_obrisi_Click);
+            // 
+            // прегледТерминаToolStripMenuItem
+            // 
+            this.прегледТерминаToolStripMenuItem.Name = "прегледТерминаToolStripMenuItem";
+            this.прегледТерминаToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
+            this.прегледТерминаToolStripMenuItem.Text = "Преглед термина";
+            this.прегледТерминаToolStripMenuItem.Click += new System.EventHandler(this.прегледТерминаToolStripMenuItem_Click);
             // 
             // Zaposleni
             // 
@@ -328,7 +331,6 @@ namespace Aplikacija_balon
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1380, 636);
             this.Controls.Add(this.btn_obrisi);
-            this.Controls.Add(this.btn_izmeni);
             this.Controls.Add(this.btn_dodaj);
             this.Controls.Add(this.txt_ukupno);
             this.Controls.Add(this.txt_brojsati);
@@ -359,6 +361,8 @@ namespace Aplikacija_balon
             this.Text = "Zaposleni";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Zaposleni_FormClosed);
             this.Load += new System.EventHandler(this.Zaposleni_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -392,7 +396,7 @@ namespace Aplikacija_balon
         private System.Windows.Forms.TextBox txt_brojsati;
         private System.Windows.Forms.TextBox txt_ukupno;
         private System.Windows.Forms.Button btn_dodaj;
-        private System.Windows.Forms.Button btn_izmeni;
         private System.Windows.Forms.Button btn_obrisi;
+        private System.Windows.Forms.ToolStripMenuItem прегледТерминаToolStripMenuItem;
     }
 }

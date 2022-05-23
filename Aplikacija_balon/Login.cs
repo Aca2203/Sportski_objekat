@@ -42,7 +42,8 @@ namespace Aplikacija_balon
                         if (String.Compare(tabela.Rows[0]["lozinka"].ToString(), txt_lozinka.Text) == 0)
                         {
                             MessageBox.Show("Uspesno logovanje");
-                            Program.id = (int) tabela.Rows[0]["id"];                            
+                            Program.id = (int) tabela.Rows[0]["id"];
+
                             this.Hide();
                             
                             Korisnik frm_korisnik = new Korisnik();
@@ -69,6 +70,7 @@ namespace Aplikacija_balon
                             {
                                 MessageBox.Show("Uspesno logovanje");
                                 Program.id = (int) tabela.Rows[0]["id"];
+                                Program.objekat_id = (int)tabela.Rows[0]["objekat_id"];
                                 this.Hide();
 
                                 Zaposleni frm_zaposleni = new Zaposleni();
