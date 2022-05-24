@@ -71,7 +71,7 @@ insert into termini values('2022-05-23', 14, 4000, 1);
 insert into termini values('2022-05-23', 15, 4000, 1);
 select * from termini
 select * from rezervacija;
-delete from rezervacija where id = 3
+delete from rezervacija
 select * from zaposleni where id = 1
 
 alter procedure rezervacija_dodaj

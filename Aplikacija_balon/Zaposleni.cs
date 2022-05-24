@@ -196,8 +196,7 @@ namespace Aplikacija_balon
             try
             {
                 SqlConnection veza = Konekcija.Connect();
-                SqlCommand komanda = new SqlCommand("select cena from termini where objekat_id = " + cmb_objekat.SelectedValue + " and datum = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND vreme = " + cmb_pocetak.Text, veza);
-
+                SqlCommand komanda = new SqlCommand("select cena from termini where objekat_id = " + cmb_objekat.SelectedValue + " and datum = '" + dateTimePicker1.Value.ToString("yyyy-MM-dd") + "' AND vreme = " + cmb_pocetak.Text, veza);                
                 veza.Open();
                 txt_posatu.Text = komanda.ExecuteScalar().ToString();
                 veza.Close();

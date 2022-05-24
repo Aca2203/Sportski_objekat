@@ -10,3 +10,4 @@ C:\Users\Sale\Desktop\Aplikacije\Sportski_objekat\Aplikacija_balon\obj\Debug\Apl
 C:\Users\Sale\Desktop\Aplikacije\Sportski_objekat\Aplikacija_balon\obj\Debug\Aplikacija_balon.pdb
 C:\Users\Sale\Desktop\Aplikacije\Sportski_objekat\Aplikacija_balon\obj\Debug\Aplikacija_balon.Zaposleni.resources
 C:\Users\Sale\Desktop\Aplikacije\Sportski_objekat\Aplikacija_balon\obj\Debug\Aplikacija_balon.Termini.resources
+C:\Users\Sale\Desktop\Aplikacije\Sportski_objekat\Aplikacija_balon\obj\Debug\Aplikacija_balon.Korisnik.resources

@@ -36,6 +36,7 @@ namespace Aplikacija_balon
             this.txt_prezime = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.прегледТерминаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.cmb_korisnik = new System.Windows.Forms.ComboBox();
@@ -46,7 +47,6 @@ namespace Aplikacija_balon
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cmb_pocetak = new System.Windows.Forms.ComboBox();
             this.cmb_kraj = new System.Windows.Forms.ComboBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -55,7 +55,7 @@ namespace Aplikacija_balon
             this.txt_ukupno = new System.Windows.Forms.TextBox();
             this.btn_dodaj = new System.Windows.Forms.Button();
             this.btn_obrisi = new System.Windows.Forms.Button();
-            this.прегледТерминаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -127,6 +127,13 @@ namespace Aplikacija_balon
             this.menuStrip1.Size = new System.Drawing.Size(1380, 28);
             this.menuStrip1.TabIndex = 9;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // прегледТерминаToolStripMenuItem
+            // 
+            this.прегледТерминаToolStripMenuItem.Name = "прегледТерминаToolStripMenuItem";
+            this.прегледТерминаToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
+            this.прегледТерминаToolStripMenuItem.Text = "Преглед термина";
+            this.прегледТерминаToolStripMenuItem.Click += new System.EventHandler(this.прегледТерминаToolStripMenuItem_Click);
             // 
             // label4
             // 
@@ -226,19 +233,6 @@ namespace Aplikacija_balon
             this.cmb_kraj.TabIndex = 19;
             this.cmb_kraj.TextChanged += new System.EventHandler(this.cmb_kraj_TextChanged);
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 303);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1356, 321);
-            this.dataGridView1.TabIndex = 20;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -318,12 +312,18 @@ namespace Aplikacija_balon
             this.btn_obrisi.UseVisualStyleBackColor = true;
             this.btn_obrisi.Click += new System.EventHandler(this.btn_obrisi_Click);
             // 
-            // прегледТерминаToolStripMenuItem
+            // dataGridView1
             // 
-            this.прегледТерминаToolStripMenuItem.Name = "прегледТерминаToolStripMenuItem";
-            this.прегледТерминаToolStripMenuItem.Size = new System.Drawing.Size(145, 24);
-            this.прегледТерминаToolStripMenuItem.Text = "Преглед термина";
-            this.прегледТерминаToolStripMenuItem.Click += new System.EventHandler(this.прегледТерминаToolStripMenuItem_Click);
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(12, 303);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(1356, 321);
+            this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // Zaposleni
             // 
@@ -388,7 +388,6 @@ namespace Aplikacija_balon
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox cmb_pocetak;
         private System.Windows.Forms.ComboBox cmb_kraj;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
@@ -398,5 +397,6 @@ namespace Aplikacija_balon
         private System.Windows.Forms.Button btn_dodaj;
         private System.Windows.Forms.Button btn_obrisi;
         private System.Windows.Forms.ToolStripMenuItem прегледТерминаToolStripMenuItem;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

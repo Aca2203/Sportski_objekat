@@ -74,6 +74,9 @@
     <Compile Include="Zaposleni.Designer.cs">
       <DependentUpon>Zaposleni.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Korisnik.resx">
+      <DependentUpon>Korisnik.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
